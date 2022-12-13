@@ -26,5 +26,5 @@ int main()
     std::cout << "Part 1: " << count1 << "\n";
     std::cout << "Part 2: " << count2 << "\n";
 
-    return 1;
+    return 0;
 }

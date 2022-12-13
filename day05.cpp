@@ -66,5 +66,5 @@ int main()
     for (auto& s : stacks2) { std::cout << s.top(); }
     std::cout << "\n";
 
-    return 1;
+    return 0;
 }

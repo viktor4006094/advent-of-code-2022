@@ -50,5 +50,5 @@ int main()
     std::cout << "Part 1: Score: " << score1 << '\n';
     std::cout << "Part 2: Score: " << score2 << '\n';
 
-    return 1;
+    return 0;
 }

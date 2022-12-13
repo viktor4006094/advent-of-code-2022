@@ -49,5 +49,5 @@ int main()
 
     std::cout << "Part 2: " << prioSum << '\n';
 
-    return 1;
+    return 0;
 }

@@ -45,5 +45,5 @@ int main()
 {
     std::cout << "Part 1: " << topOneCal() << " calories\n";
     std::cout << "Part 2: " << topThreeCal() << " calories\n";
-    return 1;
+    return 0;
 }
