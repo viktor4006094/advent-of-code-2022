@@ -10,13 +10,6 @@ struct Position {
     int x = 0;
     int y = 0;
 
-    auto operator+(const Position& other) -> Position&
-    {
-        x += other.x;
-        y += other.y;
-        return *this;
-    }
-
     auto operator+=(const Position& other) -> Position&
     {
         x += other.x;
@@ -25,24 +18,24 @@ struct Position {
     }
 };
 
-inline bool operator==(const Position& l, const Position& r) { return (l.x == r.x) && (l.y == r.y); }
-inline bool operator!=(const Position& l, const Position& r) { return !(l==r); }
+inline auto operator==(const Position& l, const Position& r) -> bool { return (l.x == r.x) && (l.y == r.y); }
+inline auto operator!=(const Position& l, const Position& r) -> bool { return !(l == r); }
 
 namespace std {
     template<> struct hash<Position> {
-        std::size_t operator()(const Position& p) const noexcept
+        auto operator()(const Position& p) const noexcept -> std::size_t
         {
-            return p.x*1024+(p.y);
+            return p.x * 1024 + (p.y);
         }
     };
 }
 
 auto follow(Position& tail, const Position& head) -> void
 {
-    Position dist{head.x-tail.x, head.y-tail.y};
+    Position dist{head.x - tail.x, head.y - tail.y};
     Position dir{sign(dist.x), sign(dist.y)};
 
-    if (dist!=dir) { tail+=dir; }
+    if (dist != dir) { tail += dir; }
 }
 
 auto main() -> int
